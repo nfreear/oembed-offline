@@ -1,1 +1,15 @@
-jQuery17107791807916946709_1327527682219({"jsoncallback":"jQuery17107791807916946709_1327527682219","_":"1327527682232","version":"1.0","type":"photo","author_url":"http:\/\/www.flickr.com\/photos\/wocrig\/","cache_age":3600,"provider_name":"Flickr","provider_url":"http:\/\/www.flickr.com\/","title":"dev8D badge [NOT TO SCALE] ;-)","author_name":"wocrig","width":"500","height":"298","url":"http:\/\/farm4.staticflickr.com\/3090\/3130803450_b59479d7a1.jpg"})
+$.fn.oembed.success({
+"jsoncallback":"jQuery17107791807916946709_1327527682219",
+"_":"1327527682232",
+"version":"1.0",
+"type":"photo",
+"author_url":"http:\/\/www.flickr.com\/photos\/wocrig\/",
+"cache_age":3600,
+"provider_name":"Flickr",
+"provider_url":"http:\/\/www.flickr.com\/",
+"title":"dev8D badge [NOT TO SCALE] ;-)",
+"author_name":"wocrig",
+"width":"500",
+"height":"298",
+"url":"http:\/\/farm4.staticflickr.com\/3090\/3130803450_b59479d7a1.jpg"
+})
