@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * jquery oembed plugin
  *
  * Copyright (c) 2009 Richard Chamorro
@@ -6,7 +6,8 @@
  * 
  * Author: Richard Chamorro 
  */
- 
+//Revision #23 on Google Code.
+
 (function ($) {
     $.fn.oembed = function (url, options, embedAction) {
 
@@ -54,7 +55,8 @@
         maxWidth: null,
         maxHeight: null,
         embedMethod: "replace",  	// "auto", "append", "fill"		
-        defaultOEmbedProvider: "oohembed", 	// "oohembed", "embed.ly", "none"
+//ou-specific: Swap.
+        defaultOEmbedProvider: "embed.ly", 	// "oohembed", "embed.ly", "none"
         allowedProviders: null,
         disallowedProviders: null,
         customProviders: null, // [ new $.fn.oembed.OEmbedProvider("customprovider", null, ["customprovider\\.com/watch.+v=[\\w-]+&?"]) ]	
@@ -65,13 +67,19 @@
         afterEmbed: function () { },
         onEmbed: function () { },
 		onError: function() {},
+//ou-specific
+		offlineUrl: null,
 		ajaxOptions: {}
     };
 
     /* Private functions */
     function getRequestUrl(provider, externalUrl) {
-
-        var url = provider.apiendpoint, qs = "", callbackparameter = provider.callbackparameter || "callback", i;
+//ou-specific
+        //var hash = $('<a/>').attr('href', externalUrl)[0].hash.replace(/#/,'-'),
+        var hash = externalUrl.replace(/^.*#/, '-'),
+            url = settings.offlineUrl ? (settings.offlineUrl
+                    + provider.name + hash +'.json') : provider.apiendpoint,
+            qs = "", callbackparameter = provider.callbackparameter || "callback", i;
 
         if (url.indexOf("?") <= 0)
             url = url + "?";
@@ -109,7 +117,8 @@
 				type: 'get',
 				dataType: 'json',
 				// error: jsonp request doesnt' support error handling
-				success:  function (data) {
+//ou-specific: Name the callback.
+				success:  ($.fn.oembed.success = function (data) {
 					var oembedData = $.extend({}, data);
 					switch (oembedData.type) {
 						case "photo":
@@ -128,7 +137,7 @@
 					settings.beforeEmbed.call(container, oembedData);
 					settings.onEmbed.call(container, oembedData);
 					settings.afterEmbed.call(container, oembedData);
-				},
+				}),
 				error: settings.onError.call(container, externalUrl, embedProvider)
 			}, settings.ajaxOptions || { } );
 		
@@ -166,7 +175,8 @@
         if (!isNullOrEmpty(settings.customProviders)) {
             $.each(settings.customProviders, function (n, customProvider) {
                 if (customProvider instanceof $.fn.oembed.OEmbedProvider) {
-                    activeProviders.push(provider);
+//ou-specific: Bug fix.
+                    activeProviders.push(customProvider);
                 } else {
                     provider = new $.fn.oembed.OEmbedProvider();
                     if (provider.fromJSON(customProvider))
@@ -296,6 +306,8 @@
         this.type = type; // "photo", "video", "link", "rich", null
         this.urlschemes = getUrlSchemes(urlschemesarray);
         this.apiendpoint = apiendpoint;
+//ou-specific
+        //this.apiendpoint = isNullOrEmpty($.fn.oembed.mockRoot) ? ($.fn.oembed.mockRoot +name+'.json') : apiendpoint;
         this.callbackparameter = callbackparameter;
         this.maxWidth = 500;
         this.maxHeight = 400;
