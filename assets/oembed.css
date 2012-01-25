@@ -1,0 +1,5 @@
+
+body{ font:1em sans-serif; background:#fafafa; color:#333; margin:2em; }
+
+a.embed{ display:block; margin:1em 0; }
+.oembed-container-Vimeo iframe{ width:640px; height:460px; }
