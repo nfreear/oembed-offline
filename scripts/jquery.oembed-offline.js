@@ -358,12 +358,16 @@
 		// new $.fn.oembed.OEmbedProvider("revision3", "video", ["revision3\.com"], "http://revision3.com/api/oembed/")
 	];
 
-//ou-specific: Offline hack.
-	$.fn.oembed.insertOffline = function(oembedData) {
+//ou-specific: Offline hacks.
+	$.fn.offlineInsert = function(oembedData) {
 		$.log(arguments[0]);
 		var container = $('a[href*="'+oembedData.provider_url+'"]');
 		$.fn.oembed.insertCode(container, 'append', oembedData);
-	}
+	};
+	$.fn.offlineUrl = function(id){
+		var u = decodeURIComponent(document.location.search.replace(/^.*=/,''));
+		return u ? u : $("#"+ id).attr("href");
+	};
 
 //ou-specific: Utilities.
 	$.log = function (t) {
