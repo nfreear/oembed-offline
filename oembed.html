@@ -2,12 +2,24 @@
 
 <link rel="stylesheet" href="assets/oembed.css" />
 
+
+<p id="cfg">&rarr; EDIT ME
+<a id=_M_offline
+   href="file://localhost/[PATH TO]/oembed-offline/mock-data/">mac os x</a> |
+<a id=_W_offline
+   href="file://localhost/C:/[PATH TO]/oembed-offline/mock-data/">windows</a> |
+<a id=_DB_offline
+   href="http://dl.dropbox.com/u/[ID]/oembed-offline/mock-data/">dropbox</a>
+
+
+<hr />
 <h1>oembed-offline</h1>
+&larr; <a rel=help href="https://github.com/nfreear/oembed-offline">Git: nfreear/oembed-offline</a><hr />
 
 
-<a class=__embed href="http://vimeo.com/20521841#ukoln-ar-drone">Vimeo: AR.Drone + Kinect + Dev8D / ukoln</a>
+<a class=embed href="http://vimeo.com/20521841#ukoln-ar-drone">Vimeo: AR.Drone + Kinect + Dev8D / ukoln</a>
 
-<a class=__embed href="http://youtube.com/watch?v=bHQqvYy5KYo#googleio-ytubes-ifr">YouTube: Google I/O 2011 YouTube's iframe Player..</a>
+<a class=embed href="http://www.youtube.com/watch?v=bHQqvYy5KYo#googleio-ytubes-ifr">YouTube: Google I/O 2011 YouTube's iframe Player..</a>
 
 <a class=embed href="http://www.flickr.com/photos/wocrig/3130803450/#wocrig-dev8d-badge">Flickr: Dev8D badge / wocrig</a>
 
@@ -15,21 +27,21 @@
 <script src="scripts/jquery-1.7.1.js"></script>
 <script src="scripts/jquery.oembed-offline.js"></script>
 <script>
+$.log("offlineUrl: "+$("#offline").attr("href"));
+
 $(document).ready(function() {
-  $.ajaxSetup({ isLocal: true });
+  //$.ajaxSetup({ isLocal: true });
 
   $("a.embed").oembed(null, {
     embedMethod: "append",
 
-//>> EDIT ME!
-    //offlineUrl:'file://localhost/{PATH TO}/oembed-offline/mock-data/' //Mac
-    //offlineUrl:'file://localhost/C:/{PATH TO}/oembed-offline/mock-data/' //Win
-    //offlineUrl:'http://dl.dropbox.com/u/{ID}/oembed-offline/mock-data/'
+    // Neat?
+    offlineUrl: $("#offline").attr("href")
   },
   (function(oembedData) {
-	  var contain = $('a[href*="'+oembedData.provider_url+'"]');
-	  $.fn.oembed.insertCode(contain, 'append', oembedData);
-	})
+    var contain = $('a[href*="'+oembedData.provider_url+'"]');
+    $.fn.oembed.insertCode(contain, 'append', oembedData);
+  })
   );
 });
 </script>
