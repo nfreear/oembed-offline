@@ -1,5 +1,33 @@
 
-body{ font:1em sans-serif; background:#fafafa; color:#333; margin:2em; }
+body {
+  font: 1em sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  margin: 2em;
+}
 
-a.embed{ display:block; margin:1em 0; }
-.oembed-container-Vimeo iframe{ width:640px; height:460px; }
+#cfg a {
+  background: #eee;
+  border: 1px solid red;
+  border-radius: .5em;
+  padding: 3px;
+}
+#cfg #offline {
+  border: 1px solid green;
+}
+
+.oembed-container {
+  border: 1px solid #bbb;
+  border-radius: .5em;
+}
+
+a.embed, .__embed{
+  display: block;
+  margin: 1em 0;
+}
+
+/* Vimeo size bug fix. */
+.oembed-container-Vimeo iframe {
+  width: 640px;
+  height: 460px;
+}
