@@ -1,7 +1,9 @@
-jQuery17104639669053722173_1327527221084({"version":"1.0",
+$.fn.oembed.success({
+"version":"1.0",
 "type":"video",
 "provider_name":"YouTube",
 "provider_url":"http:\/\/www.youtube.com\/",
-"html":"<div class='youtube oembed'><iframe role='application' title='YouTube video player' type='text\/html' width='640' height='390'src='http:\/\/www.youtube.com\/embed\/bHQqvYy5KYo?origin=embed.open.ac.uk' frameborder='0'>Your browser does not support frames.<\/iframe><div style=\"font-size:small\"><img alt='' src='http:\/\/www.youtube.com\/favicon.ico' style='padding-top:3px'\/> <a href='http:\/\/youtube.com\/html5' title=\"Join YouTube's HTML5 trial\">Opt-in to HTML5<\/a> <a href='http:\/\/youtu.be\/bHQqvYy5KYo?hd=1' title='High definition' style='padding-left:20px; margin-left:8px; background:url(http:\/\/embed.open.ac.uk\/assets\/services\/hd.png) no-repeat left;'>Watch on YouTube<\/a><\/div><\/div>",
+"html":"<div class='youtube oembed'><iframe role='application' title='YouTube video player' type='text\/html' width='640' height='390' src='http:\/\/www.youtube.com\/embed\/bHQqvYy5KYo?origin=embed.open.ac.uk' frameborder='0'>Your browser does not support frames.<\/iframe><div style='font-size:small'><img alt='' src='http:\/\/www.youtube.com\/favicon.ico' style='padding-top:3px'\/> <a href='http:\/\/youtube.com\/html5' title=\"Join YouTube's HTML5 trial\">Opt-in to HTML5<\/a> <a href='http:\/\/youtu.be\/bHQqvYy5KYo?hd=1' title='High definition' style='padding-left:20px; margin-left:8px; background:url(http:\/\/embed.open.ac.uk\/assets\/services\/hd.png) no-repeat left;'>Watch on YouTube<\/a><\/div><\/div>",
 "width":"640",
-"height":390})
+"height":"390"
+})
