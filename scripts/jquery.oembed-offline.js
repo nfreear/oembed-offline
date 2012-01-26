@@ -81,6 +81,7 @@
             url = settings.offlineUrl ? (settings.offlineUrl
                     + provider.name + hash +'.json') : provider.apiendpoint,
             qs = "", callbackparameter = provider.callbackparameter || "callback", i;
+        $.log(url);
 
         if (url.indexOf("?") <= 0)
             url = url + "?";
@@ -372,5 +373,6 @@
 //ou-specific: Utilities.
 	$.log = function (t) {
 		if(typeof console!=='undefined')console.log(t);
+		if(typeof t=='string')$("#log").html($("#log").html() +"Log: " + t +"<br>\n");
 	};
 })(jQuery);

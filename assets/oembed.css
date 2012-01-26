@@ -5,6 +5,8 @@ body {
   color: #333;
   margin: 2em;
 }
+input { font-size:.95em; }
+a img { border: none; }
 
 #cfg a {
   background: #eee;
@@ -14,6 +16,15 @@ body {
 }
 #cfg #offline {
   border: 1px solid green;
+}
+
+#log {
+  x-white-space: pre-wrap;
+  font-family: monospace;
+  border: 2px solid #ccc;
+  height: 6em;
+  overflow-y: scroll;
+  padding: 5px;
 }
 
 .oembed-container {
