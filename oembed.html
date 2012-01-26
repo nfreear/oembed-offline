@@ -5,20 +5,32 @@
 <h1>oembed-offline</h1>
 
 
-<a class=embed href="http://vimeo.com/20521841">Vimeo: AR.Drone + Kinect + Dev8D / ukoln</a>
+<a class=__embed href="http://vimeo.com/20521841#ukoln-ar-drone">Vimeo: AR.Drone + Kinect + Dev8D / ukoln</a>
 
-<a class=embed href="http://youtube.com/watch?v=bHQqvYy5KYo">YouTube: Google I/O 2011 YouTube's iframe Player..</a>
+<a class=__embed href="http://youtube.com/watch?v=bHQqvYy5KYo#googleio-ytubes-ifr">YouTube: Google I/O 2011 YouTube's iframe Player..</a>
 
-<a class=embed href="http://flickr.com/photos/wocrig/3130803450/">Flickr: Dev8D badge / wocrig</a>
+<a class=embed href="http://www.flickr.com/photos/wocrig/3130803450/#wocrig-dev8d-badge">Flickr: Dev8D badge / wocrig</a>
 
 
 <script src="scripts/jquery-1.7.1.js"></script>
 <script src="scripts/jquery.oembed-offline.js"></script>
 <script>
 $(document).ready(function() {
+  $.ajaxSetup({ isLocal: true });
+
   $("a.embed").oembed(null, {
-    embedMethod: "append"
-  });
+    embedMethod: "append",
+
+//>> EDIT ME!
+    //offlineUrl:'file://localhost/{PATH TO}/oembed-offline/mock-data/' //Mac
+    //offlineUrl:'file://localhost/C:/{PATH TO}/oembed-offline/mock-data/' //Win
+    //offlineUrl:'http://dl.dropbox.com/u/{ID}/oembed-offline/mock-data/'
+  },
+  (function(oembedData) {
+	  var contain = $('a[href*="'+oembedData.provider_url+'"]');
+	  $.fn.oembed.insertCode(contain, 'append', oembedData);
+	})
+  );
 });
 </script>
 
