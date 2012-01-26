@@ -11,6 +11,8 @@
 (function ($) {
     $.fn.oembed = function (url, options, embedAction) {
 
+        $.log("offlineUrl: "+options.offlineUrl); //ou-specific.
+
         settings = $.extend(true, $.fn.oembed.defaults, options);
 
         initializeProviders();
@@ -356,6 +358,12 @@
 		// new $.fn.oembed.OEmbedProvider("revision3", "video", ["revision3\.com"], "http://revision3.com/api/oembed/")
 	];
 
+//ou-specific: Offline hack.
+	$.fn.oembed.insertOffline = function(oembedData) {
+		$.log(arguments[0]);
+		var container = $('a[href*="'+oembedData.provider_url+'"]');
+		$.fn.oembed.insertCode(container, 'append', oembedData);
+	}
 
 //ou-specific: Utilities.
 	$.log = function (t) {
