@@ -75,7 +75,6 @@
     /* Private functions */
     function getRequestUrl(provider, externalUrl) {
 //ou-specific
-        //var hash = $('<a/>').attr('href', externalUrl)[0].hash.replace(/#/,'-'),
         var hash = externalUrl.replace(/^.*#/, '-'),
             url = settings.offlineUrl ? (settings.offlineUrl
                     + provider.name + hash +'.json') : provider.apiendpoint,
@@ -306,8 +305,6 @@
         this.type = type; // "photo", "video", "link", "rich", null
         this.urlschemes = getUrlSchemes(urlschemesarray);
         this.apiendpoint = apiendpoint;
-//ou-specific
-        //this.apiendpoint = isNullOrEmpty($.fn.oembed.mockRoot) ? ($.fn.oembed.mockRoot +name+'.json') : apiendpoint;
         this.callbackparameter = callbackparameter;
         this.maxWidth = 500;
         this.maxHeight = 400;
@@ -358,4 +355,10 @@
 		// new $.fn.oembed.OEmbedProvider("qik", "video", ["qik\\.com/\\w+"], "http://qik.com/api/oembed.json"),		
 		// new $.fn.oembed.OEmbedProvider("revision3", "video", ["revision3\.com"], "http://revision3.com/api/oembed/")
 	];
+
+
+//ou-specific: Utilities.
+	$.log = function (t) {
+		if(typeof console!=='undefined')console.log(t);
+	};
 })(jQuery);
