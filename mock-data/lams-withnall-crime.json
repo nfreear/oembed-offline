@@ -1,4 +1,5 @@
-jQuery152015279855043627322_1327580853907({"version":"1.0",
+$.fn.oembed.success({
+"version":"1.0",
 "type":"rich",
 "provider_name":"LAMS Community",
 "provider_url":"http:\/\/lamscommunity.org\/",
@@ -10,4 +11,5 @@ jQuery152015279855043627322_1327580853907({"version":"1.0",
 "thumbnail_width":"764",
 "thumbnail_height":"241",
 "__seq_id":"1007900",
-"__svg_url":"http:\/\/lamscommunity.org\/seqs\/svg\/1007900.svg"})
+"__svg_url":"http:\/\/lamscommunity.org\/seqs\/svg\/1007900.svg"
+})
