@@ -11,7 +11,7 @@
    href="http://dl.dropbox.com/u/[ID]/oembed-offline/mock-data/">dropbox</a>
 
 <form method="get" action="">
-<label>offline Url <input name=u type=url required size=75/></label> <input type="submit" />
+<label>offline Url <input name=u id=u type=url required size=75 X-placeholder="file://localhost/C:/PATH"/></label> <input type="submit" />
 </form>
 
 
@@ -19,12 +19,11 @@
 <h1>oembed-offline</h1>
 &larr; <a rel=help href="https://github.com/nfreear/oembed-offline">github: nfreear/oembed-offline</a><hr />
 
-
-<a class=embed href="http://vimeo.com/20521841#ukoln-ar-drone">Vimeo: AR.Drone + Kinect + Dev8D / ukoln</a>
-
-<a class=embed href="http://www.youtube.com/watch?v=bHQqvYy5KYo#googleio-ytubes-ifr">YouTube: Google I/O 2011 YouTube's iframe Player..</a>
-
 <a class=embed href="http://www.flickr.com/photos/wocrig/3130803450/#wocrig-dev8d-badge">Flickr: Dev8D badge / wocrig</a>
+
+<a class=embed href="http://wikipedia.org/wiki/OEmbed#oembed" X-href="http://wikipedia.org/wiki/Special:Search?search=OEmbed&fulltext=Search">Wikipedia: oEmbed</a>
+
+<a class=embed href="http://example.org/path/to/page#a1">An example</a>
 
 
 <script src="scripts/jquery-1.7.1.js"></script>
@@ -36,6 +35,10 @@ $(document).ready(function() {
   $("a.embed").oembed(null, {
     embedMethod: "append",
 
+    customProviders: [
+new $.fn.oembed.OEmbedProvider("wikipedia", "rich", ["wikipedia.org"]),
+new $.fn.oembed.OEmbedProvider("example", "rich", ["example.org"])
+    ],
     // Neat?
     offlineUrl: $.fn.offlineUrl("offline")
   },
