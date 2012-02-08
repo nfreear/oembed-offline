@@ -14,5 +14,7 @@ oembed-offline is Copyright (c) 2012 Nick Freear.
   <http://gnu.org/licenses/gpl-2.0.html>
 * Source: <https://github.com/nfreear/oembed-offline>
 
-Contributions: jquery-oembed, jquery.
-Copyright and license information can be found in individual files.
+Code contributions: jquery-oembed, jquery.
+Copyright and license information can be found in individual source files.
+
+Content: except where specified, example meta-data and content is copyright the original sites and their contributors.
