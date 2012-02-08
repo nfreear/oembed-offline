@@ -360,9 +360,10 @@
 	];
 
 //ou-specific: Offline hacks.
-	$.fn.offlineInsert = function(oembedData) {
+	$.fn.offlineInsert = function(oembedData, selector) {
 		$.log(arguments[0]);
-		var container = $('a[href*="'+oembedData.provider_url+'"]');
+		var selector = selector ? selector : 'a.embed',
+		    container = $(selector+'[href*="'+oembedData.provider_url+'"]');
 		$.fn.oembed.insertCode(container, 'append', oembedData);
 	};
 	$.fn.offlineUrl = function(id){
