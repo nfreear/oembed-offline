@@ -81,7 +81,7 @@
             url = settings.offlineUrl ? (settings.offlineUrl
                     + provider.name + hash +'.json') : provider.apiendpoint,
             qs = "", callbackparameter = provider.callbackparameter || "callback", i;
-        $.log(url);
+        $.log(provider.name+" - "+url);
 
         if (url.indexOf("?") <= 0)
             url = url + "?";
@@ -283,7 +283,7 @@
     };
 
     $.fn.oembed.getGenericCode = function (url, oembedData) {
-        var title = (oembedData.title != null) ? oembedData.title : url,
+	 var title = (oembedData.title != null) ? oembedData.title : url,
 			code = '<a href="' + url + '">' + title + '</a>';
         if (oembedData.html)
             code += "<div>" + oembedData.html + "</div>";
@@ -366,7 +366,27 @@
 		$.fn.oembed.insertCode(container, 'append', oembedData);
 	};
 	$.fn.offlineUrl = function(id){
+		$.log("Detecting offline URL...");
 		var u = decodeURIComponent(document.location.search.replace(/^.*=/,''));
+		if (!u || !u.match(/:\/\//)) {
+			var l = document.location.href;
+			$.log(">> "+l);
+
+/*if (l.match(/^file:\/\/localhost\//)) {
+  // Redirect: too late for Chrome!
+  console.log("Redirecting...");
+  document.location = (l+'#R').replace(/^file:\/\/localhost\//, 'file:///');
+}*/
+			l = l.replace(/\/[\w\.-]+(\?.*)?$/, '/mock-data/');
+			// Mac..
+			l = l.replace(/^file:\/\/\//, 'file://localhost/');
+			// Windows - to test!!
+			l = l.replace(/^file:\/\/([a-zA-Z]\:)\//, 'file://localhost/$1/');
+
+			//document.getElementById('u').value = l;
+			$('#u').val(l);
+			u = l;
+		}
 		return u ? u : $("#"+ id).attr("href");
 	};
 
