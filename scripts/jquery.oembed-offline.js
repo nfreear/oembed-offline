@@ -77,7 +77,7 @@
     /* Private functions */
     function getRequestUrl(provider, externalUrl) {
 //ou-specific
-        var hash = externalUrl.replace(/^.*#/, '-'),
+        var hash = externalUrl.match(/#.+/) ? externalUrl.replace(/^.*#/, '-') : '-ERROR-MAYBE',
             url = settings.offlineUrl ? (settings.offlineUrl
                     + provider.name + hash +'.json') : provider.apiendpoint,
             qs = "", callbackparameter = provider.callbackparameter || "callback", i;
