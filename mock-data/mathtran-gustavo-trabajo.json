@@ -2,7 +2,8 @@ $.fn.oembed.success({
 "version": "1.0"
 ,"type": "photo"
 ,"title": "Maths formula \'Trabajo\', Trabajo de una fuerza en una dimensión, tex: W=F_{x}\\Delta x"
-,"url": "http://www.mathtran.org/cgi-bin/mathtran?D=3;tex=\\displaystyle W%3DF_%7Bx%7D%5CDelta%20x"
+,"url": "assets\/services\/mathtran-gustavo-trabajo.json"
+,"__url": "http://www.mathtran.org/cgi-bin/mathtran?D=3;tex=\\displaystyle W%3DF_%7Bx%7D%5CDelta%20x"
 ,"author_name": "Gustavo"
 ,"author_url": "http://mathtran.org/profiles/Gustavo"
 ,"provider_name": "Mathtran"
@@ -11,4 +12,5 @@ $.fn.oembed.success({
 ,"height": 56
 ,"tex": "W=F_{x}\\Delta x"
 ,"description": "Trabajo de una fuerza en una dimensión"
+,"original_url": "http:\/\/mathtran.org\/formulas\/details\/336\/"
 })
