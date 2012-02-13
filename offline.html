@@ -3,11 +3,15 @@
 
 
 <h1>oembed-offline</h1>
-&larr; <a rel=help href="https://github.com/nfreear/oembed-offline">github: nfreear/oembed-offline</a><hr />
+<h2>Offline example 1</h2>
 
 <a class=embed href="http://www.flickr.com/photos/wocrig/3130803450/#wocrig-dev8d-badge">Flickr: Dev8D badge / wocrig</a>
 
-<a class=embed href="http://wikipedia.org/wiki/OEmbed#oembed" X-href="http://wikipedia.org/wiki/Special:Search?search=OEmbed&fulltext=Search">Wikipedia: oEmbed</a>
+<h2>Offline example 2</h2>
+
+<a class=embed href="http://wikipedia.org/wiki/OEmbed#oembed">Wikipedia: oEmbed</a>
+
+<h2>Offline example 3</h3>
 
 <a class=embed href="http://example.org/path/to/page#a">An example</a>
 
@@ -16,25 +20,29 @@
 <script src="scripts/jquery.oembed-offline.js"></script>
 <script>
 $(document).ready(function() {
-  //$.ajaxSetup({ isLocal: true });
+
+  var embedMethod = "append";
 
   $("a.embed").oembed(null, {
-    embedMethod: "append",
+    embedMethod: embedMethod,
 
     customProviders: [
 new $.fn.oembed.OEmbedProvider("wikipedia", "rich", ["wikipedia.org"]),
 new $.fn.oembed.OEmbedProvider("example", "rich", ["example.org"])
     ],
-    // Neat?
-    offlineUrl: $.fn.offlineUrl("offline")
+
+    // Part of the offline hack.
+    offlineUrl: $.fn.offlineUrl()
   },
+  // More of the offline hack.
   function(data) {
-    $.fn.offlineInsert(data)
-  }
-  );
+    $.fn.offlineInsert(data, embedMethod);
+  });
 });
 </script>
 
-
 <p id=log>
+
+
+<p>&larr; <a rel=help href="https://github.com/nfreear/oembed-offline">nfreear/oembed-offline</a>
 </html>

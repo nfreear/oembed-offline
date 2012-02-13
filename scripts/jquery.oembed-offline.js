@@ -360,22 +360,24 @@
 	];
 
 //ou-specific: Offline hacks.
-	$.fn.offlineInsert = function(oembedData, selector) {
+	$.fn.offlineInsert = function(oembedData, method, selector) {
 		$.log(arguments[0]);
-		var selector = selector ? selector : 'a.embed',
+		var embedMethod = method ? method : 'append',
+		    selector = selector ? selector : 'a.embed',
 		    container = $(selector+'[href*="'+oembedData.provider_url+'"]');
-		$.fn.oembed.insertCode(container, 'append', oembedData);
+		$.fn.oembed.insertCode(container, embedMethod, oembedData);
 	};
 	function offlineForm() {
-	  var form ='<form method="get" action="">'
-		+'<label>offline Url <input name=u id=u type=url required size=75 X-placeholder="file://localhost/C:/PATH"/></label>'
-		+' <input type="submit" /></form><hr />';
-	  $('h1:first').before(form);
+	  var form ='<form id="offline-fm" method="get" action="">'
+		+'<label>Current offline Url <input name=u id=u type=url required size=80 X-placeholder="file://localhost/C:/PATH"/></label>'
+		+' <input type="submit" value="Refresh" /><hr /></form>';
+	  $('h1:first').after(form);
 	}
 	$.fn.offlineUrl = function(id){
 		offlineForm();
 		$.log("Detecting offline URL...");
-		var u = decodeURIComponent(document.location.search.replace(/^.*=/,''));
+		var id = id ? id : 'offline',
+		    u = decodeURIComponent(document.location.search.replace(/^.*=/,''));
 		if (!u || !u.match(/:\/\//)) {
 			var l = document.location.href;
 			$.log(">> "+l);
@@ -388,10 +390,9 @@
 			l = l.replace(/\/[\w\.-]+(\?.*)?$/, '/mock-data/');
 			// Mac..
 			l = l.replace(/^file:\/\/\//, 'file://localhost/');
-			// Windows - to test!!
+			// Windows.
 			l = l.replace(/^file:\/\/([a-zA-Z]\:)\//, 'file://localhost/$1/');
 
-			//document.getElementById('u').value = l;
 			u = l;
 		}
 		$('#u').val(u);

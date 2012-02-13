@@ -19,6 +19,15 @@ iframe { display: block; overflow:hidden; }
   border: 1px solid green;
 }
 
+#offline-fm {
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  background: #eee;
+  padding: 1em 5px;
+  margin: 2em 0;
+}
+#offline-fm hr{ display: none; }
+
 #log {
   x-white-space: pre-wrap;
   font-family: monospace;
