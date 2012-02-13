@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="developer-mozilla-org">
+<head>
+  <title>Using full-screen mode - MDN</title>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, width=device-width">
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta name="Copyright" content="Copyright (c) 2005-2012 Mozilla.">
+<meta name="Rating" content="General">
+
+<link rel="home" href="/">
+<link rel="copyright" href="#copyright">
+<meta name="robots" content="index,follow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="What's new feed" href="/index.php?title=Special:Recentchanges&amp;feed=rss" />
+<link rel="alternate" type="application/rss+xml" title="Page and subpages changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;feedtype=subpagechanges&amp;pageid=84198" />
+<link rel="alternate" type="application/rss+xml" title="Page changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;pageid=84198" />
+<meta name="generator" content="MindTouch" />
+<link rel="search" type="application/opensearchdescription+xml" title="MDN Search" href="/deki/gui/opensearch.php?type=description" />
+<link rel="stylesheet" type="text/css" media="screen" href="/skins/common/css.php" /> <!--[if IE 7]><style type="text/css">@import "/skins/common/_ie7.css";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins/common/_ie.css";</style><![endif]--><link rel="stylesheet" type="text/css" media="print" href="/skins/common/print.css" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="/skins/mdn/Transitional/css.php">
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie7.css"><![endif]-->
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie6.css"><![endif]-->
+<link rel="stylesheet" type="text/css" media="print" href="/skins/mdn/Transitional/print.css">
+
+<script type="text/javascript">CKEDITOR_BASEPATH = "/deki/plugins/page_editor_ckeditor/ckeditor/";</script>
+<script type="text/javascript" src="/skins/common/js.php?perms=LOGIN,BROWSE,READ,SUBSCRIBE"></script><script type="text/javascript">var _starttime = new Date().getTime();</script>
+
+<!--[if IE]>
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script src="/skins/mdn/Transitional/js/html5.js"></script>
+<![endif]-->
+
+	<script type="text/javascript">
+
+		var aLt = aLt || [];aLt["attach-no-description"] = 'No description'; aLt["cancel"] = 'Cancel'; aLt["close"] = 'Close'; aLt["comment-delete"] = 'Are you sure you want to delete this comment?'; aLt["contentrating-title-popup"] = 'Thanks for your feedback'; aLt["error"] = 'Error'; aLt["error-permission-denied"] = 'Permission denied'; aLt["error-permission-details"] = 'Your account does not have sufficient permissions to perform that action.'; aLt["gallery-close"] = 'close'; aLt["gallery-next"] = 'next'; aLt["gallery-prev"] = 'prev'; aLt["internal-error"] = 'Sorry, but there was an internal problem - please try again soon.'; aLt["js-label_cancel"] = 'Cancel'; aLt["js-label_save"] = 'Save'; aLt["js-tooltip_cancel"] = 'Exit Without Saving Changes'; aLt["js-tooltip_save"] = 'Save and Exit (Alt+S)'; aLt["ldap-provide-credentials"] = 'Please provide external service login credentials.'; aLt["loading"] = 'Loading...'; aLt["menu-confirm-delete"] = 'Are you sure you want to delete this file?'; aLt["menu-delete-file"] = 'Delete'; aLt["menu-edit-description"] = 'Edit description'; aLt["menu-move-file"] = 'Move'; aLt["menu-previous-versions"] = 'Previous versions'; aLt["menu-view-original"] = 'View original'; aLt["ready"] = 'Ready'; aLt["remove-tag"] = 'Remove tag'; aLt["restore-tag"] = 'Restore tag'; aLt["adding-tags"] = 'Adding Tags...'; aLt["save"] = 'Save'; aLt["submit"] = 'Submit'; aLt["wikibits-attach-another"] = 'Attach another file'; aLt["wikibits-attach-file"] = 'Attach File'; aLt["wikibits-cant-attach-editing"] = 'Sorry, you can\'t attach files while editing a page. Please close the editor first.'; aLt["wikibits-edit-section"] = 'Edit section'; aLt["wikibits-remove-file"] = 'Remove file'; aLt["advanced-search"] = 'Advanced Search'; aLt["standard-search"] = 'Standard Search';  var wfMsg = wfMsg || function (key) { return aLt[key] ? aLt[key] : 'MISSING: ' + key; };
+	//hook in menu clicking events to the document's body
+	YAHOO.util.Event.addListener(document, "click", function () { DWMenu.BodyClick(); });
+	YAHOO.util.Event.onDOMReady(function () { new clientWindow });
+
+		
+
+			YAHOO.util.Event.onDOMReady(function() {
+			tb_init("a.lightbox, area.lightbox, input.lightbox, a[rel='awesomebox']");//pass where to apply thickbox
+		});
+	
+			YAHOO.util.Event.onDOMReady(function() {
+			MTComments.HookBehavior();
+		});
+		</script>
+<link type="text/css" rel="stylesheet" href="https://developer.mozilla.org/deki/scripts/res/syntax/SyntaxHighlighter.css" /><script type="text/javascript" src="https://developer.mozilla.org/deki/scripts/res/syntax/shCore.js"></script><script type="text/javascript" src="https://developer.mozilla.org/deki/scripts/res/syntax/shBrushXml.js"></script><script type="text/javascript" src="https://developer.mozilla.org/deki/scripts/res/syntax/shBrushJScript.js"></script><script type="text/javascript" src="https://developer.mozilla.org/deki/scripts/res/syntax/shBrushCss.js"></script><script type="text/javascript" src="/deki/plugins/nav_pane/rgbcolor.js"></script>
+<script type="text/javascript" src="/deki/plugins/nav_pane/nav.js"></script>
+
+<script type="text/javascript">
+
+Deki.BaseHref = 'https://developer.mozilla.org';
+Deki.PageId = 84198;
+Deki.PageTitle = 'en/DOM/Using full-screen mode';
+Deki.PageLanguageCode = 'en';
+Deki.FollowRedirects = 1;
+Deki.PathTpl = '/skins/mdn';
+Deki.PathSkin = '/skins/mdn/Transitional';
+Deki.PathCommon = '/skins/common';
+Deki.UserName = 'Anonymous';
+Deki.Today = '13 Feb 2012';
+Deki.UserIsAnonymous = true;
+Deki.EditorConfigToken = '455ea76';
+Deki.EditorStylesToken = '15791cee';
+Deki.PageEditable = false;
+</script>
+<script type="text/javascript">aLt["commercial-required"] = 'Gather feedback on your content with <strong>community scoring</strong> - these ratings weight results in adaptive search. Through curation analytics, ratings are used to highlight pages in need of attention. <a href="http://www.mindtouch.com/redir/mindtouch-tcs/">Learn more on enabling these capabilities with MindTouch 2010.</a>';aLt["login-required"] = 'You must be <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FDOM%2FUsing+full-screen+mode">logged in</a> to perform that action';</script><link href="/skins/common/custom_css.php" rel="stylesheet" type="text/css" /> 
+ 
+</head>
+
+<body id="docs" class="section-docs en ltr yui-skin-sam PageDW-enDOMUsingfullscreenmode" role="document">
+<!--[if lte IE 8]>
+<noscript><div class="global-notice">
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of MicroSoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p>
+</div></noscript>
+<![endif]-->
+<noscript><div class="noscript">This application requires Javascript to be enabled.</div></noscript>
+<header id="masthead" role="banner">
+  <div class="wrap">
+  
+    <div id="branding">
+      <h1 id="logo"><a href="/"><img src="/skins/mdn/Transitional/img/mdn-logo-sm.png" alt="" title="" width="62" height="71"> Mozilla Developer Network</a></h1>
+    </div>
+    
+    <a id="moz-tab" href="http://mozilla.org">Mozilla</a>
+
+    <nav id="nav" role="menubar">
+      <ul id="nav-main">
+        <li id="nav-main-topics" class="menu"><a href="#nav-sub-topics" aria-haspopup="true" class="toggle" title="Explore other parts of MDN">Topics</a>
+          <ul id="nav-sub-topics" class="sub-menu" aria-hidden="true">
+            <li id="nav-sub-web"><a href="/web">Web</a></li>
+            <li id="nav-sub-apps"><a href="/apps">Apps</a></a></li>
+            <li id="nav-sub-mobile"><a href="/mobile">Mobile</a></li>
+            <li id="nav-sub-addons"><a href="/addons">Add-ons</a></li>
+            <li id="nav-sub-mozilla"><a href="/mozilla">Mozilla</a></li>
+          </ul>
+        </li>
+        <li id="nav-main-docs" class="menu"><a href="/docs" class="docs toggle" aria-haspopup="true" aria-labelledby="nav-main-docs">Docs</a>
+          <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+            <ul>
+              <li>
+                <ul>
+                  <li><a href="/en/HTML">HTML</a></li>
+                  <li><a href="/en/DOM">DOM</a></li>
+                  <li><a href="/en/Using_audio_and_video_in_Firefox">Video</a></li>
+                  <li><a href="/en/Using_audio_and_video_in_Firefox">Audio</a></li>
+                  <li><a href="/en/SVG">SVG</a></li>
+                  <li><a href="/en/WebGL">WebGL</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/HTML/HTML5">HTML5</a></li>
+                  <li><a href="/en/WebSockets">WebSockets</a></li>
+                  <li><a href="/en/Offline_resources_in_Firefox">Offline Cache</a></li>
+                  <li><a href="/en/DOM/Storage">Local Storage</a></li>
+                  <li><a href="/en/IndexedDB">IndexedDB</a></li>
+                  <li><a href="/en/Using_files_from_web_applications">File API</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/CSS">CSS</a></li>
+                  <li><a href="/en/Using_gradients">Gradients</a></li>
+                  <li><a href="/en/CSS/Using_CSS_transforms">Transforms</a></li>
+                  <li><a href="/en/CSS/CSS_transitions">Transitions</a></li>
+                  <li><a href="/en/CSS/CSS_animations">Animations</a></li>
+                  <li><a href="/en/CSS/Media_queries">Media Queries</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/JavaScript">JavaScript</a></li>
+                  <li><a href="/en/Ajax">Ajax</a></li>
+                  <li><a href="/en/HTML/Canvas">Canvas</a></li>
+                  <li><a href="/en/Using_geolocation">Geolocation</a></li>
+                  <li><a href="/en/DragDrop/Drag_and_Drop">Drag &amp; Drop</a></li>
+                  <li><a href="/en/Using_web_workers">Web Workers</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p><a href="/docs">More docs&hellip;</a></p>
+          </div>
+        </li>
+        <li id="nav-main-demos"><a href="/demos" class="demos">Demos</a></li>
+        <li id="nav-main-learning"><a href="/learn" class="learning">Learning</a></li>
+        <li id="nav-main-community" class="menu"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Community</a>
+          <ul id="nav-sub-community" class="sub-menu" aria-hidden="true">
+            <li><a href="/events">Events</a></li>
+            <li><a href="/discussions">Discussions</a></li>
+            <li><a href="/promote">Promote</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    
+    <ul class="user-state">
+                <li id="user-signin" class="menu">
+        <form class="browserid" action="/en-US/users/browserid_verify" method="POST">
+          <input id="id_assertion" type="hidden" name="assertion" />
+                  <a href="#" class="browserid-signin toggle" aria-haspopup="true" title="Sign in with BrowserID">Sign in</a> 
+                  <div id="browserid-info" class="sub-menu" aria-hidden="true" aria-labelledby="user-signin">
+            <h3>What's this?</h3>
+            <p>MDN has switched to <a href="https://browserid.org/" target="_blank" rel="external">BrowserID</a>, a safe and simple way to sign in with just your e-mail address. 
+              <a href="http://identity.mozilla.com/post/12950196039/deploying-browserid-at-mozilla" rel="external">Learn more about why Mozilla is using BrowserID</a>.</p>
+            <p><strong>Returning members:</strong> sign in with BrowserID and you'll be connected to your MDN profile (all your information is still here).</p>
+            <p><strong>New members:</strong> sign in with BrowserID first, then you'll be able to set up your new MDN profile.</p>
+            <p><a href="#" class="browserid-signin" title="Sign in with BrowserID">Sign in</a></p>
+          </div>
+                </form>
+      </li>
+              </ul>
+    
+    <form id="site-search" method="get" action="https://www.google.com/search" data-url="/search">
+      <p>
+        <input type="text" role="search" placeholder="Search MDN" id="q" name="q">
+        <noscript><button type="submit">Search</button></noscript>
+      </p>
+      <input type="hidden" name="sitesearch" value="developer.mozilla.org">
+      <div id="site-search-gg"></div>
+    </form>
+
+  </div>
+</header>
+
+
+<section id="nav-toolbar">
+<div class="wrap">
+
+<nav id="tool-menus">
+  <ul id="tools">
+    <li class="menu">
+      <a href="#site-tools" class="toggle">Site tools</a>
+      <ul id="site-tools" class="sub-menu" role="navigation">
+         
+        <li class="site-recent">	<a href="/Special:Recentchanges" title="Recent changes">Recent changes</a>
+</li>
+        <li class="site-rss">	<a href="/Special:ListRss" title="RSS feeds">RSS feeds</a>
+</li>
+      	<li class="siteListusers"><a href="/User:" title="Users">Users</a></li>
+              <li class="site-templates">	<a href="/Template:" title="Templates">Templates</a>
+</li>
+              <li class="site-map">	<a href="/Special:Sitemap" title="Sitemap">Sitemap</a>
+</li>
+        <li class="site-popular">	<a href="/Special:Popularpages" title="Popular pages">Popular pages</a>
+</li>
+      	<li class="siteAbout"><a href="/Special:About" title="About MDN">About MDN</a></li>
+      </ul>
+    </li>
+    <li class="menu">
+      <a href="#page-tools" class="toggle">This page</a>
+      <ul id="page-tools" class="sub-menu" role="navigation">
+                                <li class="page-new"><a href="#" title="New page" class="disabled ">New sub-page</a></li>
+                    <li class="page-history"><a href="/index.php?title=en/DOM/Using_full-screen_mode&action=history" title="Page history">History</a></li>
+                    <li class="page-talk">	<a href="/Talk:en/DOM/Using_full-screen_mode" title="Talk page">Talk page</a>
+</li>
+                                                        <li class="page-print">	<a href="#" onclick="return window.print();"  title="Print page">Print page</a>
+</li>
+            <li class="page-backlinks"><a href="/index.php?title=Special:Article&type=backlinks&pageid=84198">Pages that link here</a></li>      </ul>
+    </li>
+      <li class="menu">
+      <a href="#" class="toggle">Languages</a>
+      <ul><li><a rel="internal" href="https://developer.mozilla.org/ja/DOM/Using_full-screen_mode" title="ja/DOM/Using_full-screen_mode">&#26085;&#26412;&#35486;</a></li></ul>    </li>
+    </ul>
+</nav>
+
+  <nav class="crumbs" role="navigation">
+    <ol>
+      <li class="crumb-one"><a href="/">MDN</a></li>
+      <li class="crumb-two"><a href="/docs">Docs</a></li>
+    <li class="first"><a href="https://developer.mozilla.org/" class="deki-ns">MDN</a></li>
+<li class="second"><a href="https://developer.mozilla.org/en" class="deki-ns">MDN</a></li>
+<li><a href="https://developer.mozilla.org/en/DOM" class="deki-ns">Document Object Model (DOM)</a></li>
+<li class="last"><a href="https://developer.mozilla.org/en/DOM/Using_full-screen_mode" class="deki-ns current">Using full-screen mode</a></li> 
+    </ol>
+  </nav>
+
+</div>
+</section>
+
+<section id="content">
+<div class="wrap">
+  <div id="content-main" class="full">
+
+    <div id="sessionMsg"><div class="inner"><ul></ul></div></div>
+        
+    <article class="article PageDW-enDOMUsingfullscreenmode" role="main">
+            
+            <div class="page-title hideforedit">
+              <h1 class="first" id="title">Using full-screen mode</h1>            
+      
+              <ul id="page-buttons">
+          <li class="page-edit"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FDOM%2FUsing+full-screen+mode" class="disabled" title="Log in or sign up to edit this page">Edit</a></li>
+          <li class="page-watch"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FDOM%2FUsing+full-screen+mode" class="disabled" title="Log in or sign up to add this page to your watch list">Watch</a></li>
+        </ul> 
+            </div>
+      
+    <div class="page-content boxed">
+
+     
+      <div id="article-nav" class="hideforedit">      
+              <div class="page-toc">
+          <h2>Table of contents</h2>
+          <ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Activating_full-screen_mode" rel="internal">Activating full-screen mode</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>1.1.</span> <a href="#Presentation_differences" rel="internal">Presentation differences</a></li><li><span>1.2.</span> <a href="#Notification" rel="internal">Notification</a></li><li><span>1.3.</span> <a href="#When_a_full-screen_request_fails" rel="internal">When a full-screen request fails</a></li></ol></li><li><span>2.</span> <a href="#Getting_out_of_full_screen_mode" rel="internal">Getting out of full screen mode</a></li><li><span>3.</span> <a href="#Other_information" rel="internal">Other information</a></li><li><span>4.</span> <a href="#Things_your_users_want_to_know" rel="internal">Things your users want to know</a></li><li><span>5.</span> <a href="#Example" rel="internal">Example</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>5.1.</span> <a href="#Watching_for_the_Enter_key" rel="internal">Watching for the Enter key</a></li><li><span>5.2.</span> <a href="#Toggling_full_screen_mode" rel="internal">Toggling full screen mode</a></li></ol></li><li><span>6.</span> <a href="#Browser_compatibility" rel="internal">Browser compatibility</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>6.1.</span> <a href="#Gecko_notes" rel="internal">Gecko notes</a></li></ol></li><li><span>7.</span> <a href="#Specification" rel="internal">Specification</a></li><li><span>8.</span> <a href="#Non-standard_methods" rel="internal">Non-standard methods</a></li><li><span>9.</span> <a href="#See_also" rel="internal">See also</a></li></ol>        </div>
+      
+        <ul class="page-anchors">
+          <li class="anchor-tags"><a href="#page-tags" title="Jump to tags for this article">Tags</a></li>
+          <li class="anchor-files"><a href="#page-files" title="Jump to files for this article">Files</a></li>
+        </ul>
+
+              <div id="deki-page-alerts" class="disabled">
+				<div class="toggle">
+					<a href="javascript:void(0);" class="off">
+						<span>Page Notifications</span>
+						<span class="status">Off</span>
+					</a>
+				</div></div>      
+      
+      </div> 
+    
+            
+      <div id="page-top"><div id="pageToc"><div class="pageToc"><h5>Table of contents</h5><ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Activating_full-screen_mode" rel="internal">Activating full-screen mode</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>1.1.</span> <a href="#Presentation_differences" rel="internal">Presentation differences</a></li><li><span>1.2.</span> <a href="#Notification" rel="internal">Notification</a></li><li><span>1.3.</span> <a href="#When_a_full-screen_request_fails" rel="internal">When a full-screen request fails</a></li></ol></li><li><span>2.</span> <a href="#Getting_out_of_full_screen_mode" rel="internal">Getting out of full screen mode</a></li><li><span>3.</span> <a href="#Other_information" rel="internal">Other information</a></li><li><span>4.</span> <a href="#Things_your_users_want_to_know" rel="internal">Things your users want to know</a></li><li><span>5.</span> <a href="#Example" rel="internal">Example</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>5.1.</span> <a href="#Watching_for_the_Enter_key" rel="internal">Watching for the Enter key</a></li><li><span>5.2.</span> <a href="#Toggling_full_screen_mode" rel="internal">Toggling full screen mode</a></li></ol></li><li><span>6.</span> <a href="#Browser_compatibility" rel="internal">Browser compatibility</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>6.1.</span> <a href="#Gecko_notes" rel="internal">Gecko notes</a></li></ol></li><li><span>7.</span> <a href="#Specification" rel="internal">Specification</a></li><li><span>8.</span> <a href="#Non-standard_methods" rel="internal">Non-standard methods</a></li><li><span>9.</span> <a href="#See_also" rel="internal">See also</a></li></ol></div></div><div class="pageText" id="pageText"><p><div style="overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(156, 244, 156); text-align: center;"><p style="margin: 4px 0px;"><strong>This is an experimental feature</strong><br />Because this feature is still in development in some browsers, check the <a href="#AutoCompatibilityTable">compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental feature is subject to change in future version of browsers as the spec changes.</p></div>
+</p>
+<p>The full-screen API provides an easy way for web content to be presented using the user's entire screen. This article provides information about using this API.</p>
+<div class="note"><strong>Note:</strong> This API is early in the standardization process. Although both Gecko and Google Chrome have implementations, they are not currently mutually-compatible, and neither implements the current draft of the specification. For that reason, at <a title="en/DOM/Using_full-screen_mode#Gecko_notes" rel="internal" href="https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Gecko_notes">least in Firefox</a>, it isn't enabled by default in Firefox 9, but is in Firefox 10. Because the <a class="external" title="http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html" rel="external" href="http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html" target="_blank">specification</a> is currently an extremely early draft, this documentation is subject to be entirely wrong, and is very preliminary. Once the specification has settled down a bit, the documentation will be cleaned up to be more browser-agnostic.</div>
+<p>The API lets you easily direct the browser to make an element and its children, if any, occupy the full screen, eliminating all browser user interface and other applications from the screen for the duration.</p>
+<div id="section_1"><span id="Specification"></span><span id="Activating_full-screen_mode"></span><h2 class="editable">Activating full-screen mode</h2>
+<p>Given an element that you'd like to present in full-screen mode (such as a <code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/video">&lt;video&gt;</a></code>
+, for example), you can present it in full-screen mode by simply calling its <code>requestFullScreen()</code> method; this method is implemented in Gecko as <code><a rel="custom" href="https://developer.mozilla.org/en/DOM/element.mozRequestFullScreen">element.mozRequestFullScreen()</a></code>
+ and in WebKit as <code>element.webkitRequestFullScreen()</code>.</p>
+<p>Let's consider this <code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/video">&lt;video&gt;</a></code>
+ element:</p>
+
+          <pre name="code" class="xml">&lt;video controls id=&quot;myvideo&quot;&gt;
+  &lt;source src=&quot;somevideo.webm&quot;&gt;&lt;/source&gt;
+  &lt;source src=&quot;somevideo.mp4&quot;&gt;&lt;/source&gt;
+&lt;/video&gt;</pre>
+        
+<p>We can put that video into full-screen mode with script like this:</p>
+
+          <pre name="code" class="js">var elem = document.getElementById(&quot;myvideo&quot;);
+if (elem.requestFullScreen) {
+  elem.requestFullScreen();
+} else if (elem.mozRequestFullScreen) {
+  elem.mozRequestFullScreen();
+} else if (elem.webkitRequestFullScreen) {
+  elem.webkitRequestFullScreen();
+}</pre>
+        
+<div id="section_2"><span id="Presentation_differences"></span><h3 class="editable">Presentation differences</h3>
+<p>It's worth noting a key difference here between the Gecko and WebKit implementations at this time: Gecko automatically adds CSS rules to the element to stretch it to fill the screen: &quot;<code>width: 100%; height: 100%</code>&quot;. WebKit doesn't do this; instead, it centers the full-screen element at the same size in a screen that's othewise black. To get the same full-screen behavior in WebKit, you need to add your own &quot;<code>width: 100%; height: 100%;</code>&quot; CSS rules to the element yourself:</p>
+
+          <pre name="code" class="css">:-webkit-full-screen #myvideo {
+  width: 100%;
+  height: 100%;
+}</pre>
+        
+<p>On the other hand, if you're trying to emulate WebKit's behavior on Gecko, you need to place the element you want to present inside another element, which you'll make full-screen instead, and use CSS rules to adjust the inner element to match the appearance you want.</p>
+</div><div id="section_3"><span id="Notification"></span><h3 class="editable">Notification</h3>
+<p>When full-screen mode is successfully engaged, the document which contains the full-screen element receives a <code>mozfullscreenchange</code> event. When full-screen mode is exited, the document again receives a&nbsp; <code>mozfullscreenchange</code> event. Note that the <code>mozfullscreenchange</code> event doesn't provide any information itself as to whether the document is entering or exiting full-screen mode, but if the document has a non null <code><a rel="custom" href="https://developer.mozilla.org/en/DOM/document.mozFullScreenElement">mozFullScreenElement</a></code>
+, you know you're in full-screen mode.</p>
+</div><div id="section_4"><span id="When_a_full-screen_request_fails"></span><h3 class="editable">When a full-screen request fails</h3>
+<p>It's not guaranteed that you'll be able to switch into full-screen mode. For example, <code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/iframe">&lt;iframe&gt;</a></code>
+ elements have the 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/iframe#attr-mozallowfullscreen">mozallowfullscreen</a></code>
+ attribute in order to opt-in to allowing their content to be displayed in full-screen mode. In addition, certain kinds of content, such as windowed plug-ins, cannot be presented in full-screen mode. Attempting to put an element which can't be displayed in full-screen mode (or the parent or descendant of such an element) won't work. Instead, the element which requested full-screen will receive a <code>mozfullscreenerror</code> event.</p>
+</div></div><div id="section_5"><span id="Getting_out_of_full_screen_mode"></span><h2 class="editable">Getting out of full screen mode</h2>
+<p>The user always has the ability to exit full-screen mode of their own accord; see <a rel="custom" href="https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Things_your_users_want_to_know">Things your users want to know</a>. You can also do so programmatically by calling the <code>cancelFullScreen()</code> method; this is implemented in Gecko as <a title="document.mozCancelFullScreen" rel="internal" href="https://developer.mozilla.org/en/DOM/document.mozCancelFullScreen"><code>mozCancelFullScreen()</code></a> and WebKit as <code>webkitCancelFullScreen()</code>.</p>
+</div><div id="section_6"><span id="Other_information"></span><h2 class="editable">Other information</h2>
+<p>The <code><a rel="custom" href="https://developer.mozilla.org/en/DOM/document">document</a></code>
+ provides some additional information that can be useful when developing full-screen web applications:</p>
+<dl> <dt><code><a rel="custom" href="https://developer.mozilla.org/en/DOM/document.mozFullScreen">fullScreen</a></code>
+</dt> <dd>The <code>fullScreen</code> attribute tells you if the document is currently displaying an element in full-screen mode.</dd> <dt><code><a rel="custom" href="https://developer.mozilla.org/en/DOM/document.mozFullScreenElement">fullScreenElement</a></code>
+</dt> <dd>The <code>fullScreenElement</code> attribute tells you the <code><a rel="custom" href="https://developer.mozilla.org/en/DOM/element">element</a></code>
+ that's currently being displayed full-screen. If this is non-null, the document is in full-screen mode. If this is null, the document is not in full-screen mode.</dd> <dt><code><a rel="custom" href="https://developer.mozilla.org/en/DOM/document.mozFullScreenEnabled">fullScreenEnabled</a></code>
+</dt> <dd>The <code>fullScreenEnabled</code> attribute tells you whether or not the document is currently in a state that would allow full-screen mode to be requested.</dd>
+</dl>
+</div><div id="section_7"><span id="Specification"></span><span id="Things_your_users_want_to_know"></span><h2 class="editable">Things your users want to know</h2>
+<p>You'll want to be sure to let your users know that they can press the ESC key (or F11) to exit full-screen mode.</p>
+<p>Also, any alphanumeric keyboard input while in full-screen mode causes a warning message to appear; this is done to help guard against phishing attacks. The following keys are the only ones that don't cause this warning message to appear:</p>
+<div> <div class="threecolumns" style="undefined"> <ul> <li>left arrow</li> <li>right arrow</li> <li>up arrow</li> <li>down arrow</li> <li>space</li> <li>shift</li> <li>control</li> <li>alt</li> <li>page up</li> <li>page down</li> <li>home</li> <li>end</li> <li>tab</li> <li>meta</li> </ul> </div>
+</div>
+<p>In addition, navigating to another page, changing tabs, or switching to another application (using, for example, Alt-Tab) while in full-screen mode exits full-screen mode as well.</p>
+</div><div id="section_8"><span id="Specification"></span><span id="Example"></span><h2 class="editable">Example</h2>
+<p>In this example, a video is presented in a web page. Pressing the Return or Enter key lets the user toggle between windowed and full-screen presentation of the video.</p>
+<p>
+<a rel="internal" href="https://developer.mozilla.org/samples/domref/fullscreen.html" title="samples/domref/fullscreen.html" class=" new"><span style="cursor:pointer; padding: 2px; border: solid 2px #333333; color: black; -moz-box-shadow:2px 2px 2px #191919; -webkit-box-shadow:2px 2px 2px #191919; -o-box-shadow:2px 2px 2px #191919; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; background:-moz-linear-gradient(76% 26% 142deg, #DCE3FF, #FFFFFF 47%);">View the live example</span></a></p>
+<div id="section_9"><span id="Watching_for_the_Enter_key"></span><h3 class="editable">Watching for the Enter key</h3>
+<p>When the page is loaded, this code is run to set up an event listener to watch for the 'enter' key.</p>
+
+          <pre name="code" class="js">document.addEventListener(&quot;keydown&quot;, function(e) {
+  if (e.keyCode == 13) {
+    toggleFullScreen();
+  }
+}, false);</pre>
+        
+</div><div id="section_10"><span id="Toggling_full_screen_mode"></span><h3 class="editable">Toggling full screen mode</h3>
+<p>This code is called when the user hits the Enter key, as seen above.</p>
+
+          <pre name="code" class="js">function toggleFullScreen() {
+  if ((document.fullScreenElement &amp;&amp; document.fullScreenElement !== null) ||    // alternative standard method
+      (!document.mozFullScreen &amp;&amp; !document.webkitIsFullScreen) {               // current working methods
+    if (document.documentElement.requestFullScreen) {
+      document.documentElement.requestFullScreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullScreen) {
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  } else {
+    if (document.cancelFullScreen) {
+      document.cancelFullScreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen();
+    }
+  }
+}</pre>
+        
+<p>This starts by looking at the value of the <code>fullScreen</code> attribute on the <code><a rel="custom" href="https://developer.mozilla.org/en/DOM/document">document</a></code>
+ (checking it prefixed with both <code>-moz-</code> and <code>-webkit-</code>). If it's <code>false</code>, the document is currently in windowed mode, so we need to switch to full-screen mode. The spec draft has a different&nbsp;&nbsp;<code>fullScreenElement</code>&nbsp;method to check whether or not an element is in full-screen mode, if it's&nbsp;&nbsp;<code>null</code>&nbsp;then we are in windowed mode. Both gecko and webkit have implemented a the non-standard&nbsp;&nbsp;<code>fullScreen</code>&nbsp;&nbsp;method so far. Switching to full-screen mode is done by calling either <code><a rel="custom" href="https://developer.mozilla.org/en/DOM/element.mozRequestFullScreen">element.mozRequestFullScreen()</a></code>
+ or <code>webkitRequestFullScreen()</code>, depending on which is available.</p>
+<p>If full screen mode is already active, we call <code><a rel="custom" href="https://developer.mozilla.org/en/DOM/document.mozCancelFullScreen">document.mozCancelFullScreen()</a></code>
+ or <code>webkitCancelFullScreen()</code>, again depending on which browser is in use.</p>
+</div></div><div id="section_11"><span id="Specification"></span><span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>Although both Gecko and WebKit implement a draft of this API, there are some subtle differences. This document doesn't necessarily try to call them all into focus. The article will be revised as the spec and implementations fall closer into alignment with one another.</p>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script>
+<div class="htab"><a name="AutoCompatibilityTable"></a>
+<ul> <li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div></p>
+<div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>15&nbsp;
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span></td> <td>9.0 (9.0)
+ 
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> <tr> <td><code>fullScreenEnabled</code></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>10.0 (10.0)
+ 
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>9.0 (9.0)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> <tr> <td><code>fullScreenEnabled</code></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>10.0 (10.0)
+ 
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">moz</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table>
+</div>
+<div id="section_12"><span id="Gecko_notes"></span><h3 class="editable">Gecko notes</h3>
+<p>Although this API was introduced in Gecko 9.0 (Firefox 9.0 / Thunderbird 9.0 / SeaMonkey 2.6)
+, it's not enabled by default in that release. To enable it, set the <code>full-screen-api.enabled</code> preference to <code>true</code>. The API is enabled by default in Gecko 10.0 (Firefox 10.0 / Thunderbird 10.0)
+.</p>
+</div></div><div id="section_13"><span id="Specification"></span><h2 class="editable">Specification</h2>
+<p><a class="external" title="http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html#api" rel="external" href="http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html#api" target="_blank">Fullscreen API</a></p>
+</div><div id="section_14"><span id="Non-standard_methods"></span><h2 class="editable">Non-standard methods</h2>
+<p>These are some of the methods that browsers implemented before the standard was drafted. Having the standard methods described above it's better to avoid using the following ones:</p>
+<ul> <li><code>window.fullScreen</code> (Firefox)</li> <li><code>HTMLMediaElement.webkitDisplayingFullscreen</code></li> <li><code>HTMLMediaElement.webkitEnterFullscreen</code></li> <li><code>HTMLMediaElement.webkitExitFullscreen</code></li> <li><code>HTMLMediaElement.webkitSupportsFullscreen</code></li>
+</ul>
+</div><div id="section_15"><span id="See_also"></span><h2 class="editable">See also</h2>
+<ul> <li><code><a rel="custom" href="https://developer.mozilla.org/en/DOM/element.mozRequestFullScreen">element.mozRequestFullScreen()</a></code>
+</li> <li><code><a rel="internal" href="https://developer.mozilla.org/Article_not_found?uri=en/DOM/element.mozCancelFullScreen" class="new">element.mozCancelFullScreen()</a></code>
+</li> <li><code><a rel="custom" href="https://developer.mozilla.org/en/DOM/document.mozFullScreen">document.mozFullScreen</a></code>
+</li> <li><code><a rel="custom" href="https://developer.mozilla.org/en/DOM/document.mozFullScreenElement">document.mozFullScreenElement</a></code>
+</li> <li><code><a rel="custom" href="https://developer.mozilla.org/en/DOM/document.mozFullScreenEnabled">document.mozFullScreenEnabled</a></code>
+</li> <li><code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3A-moz-full-screen">:-moz-full-screen</a></code>
+</li> <li><code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3A-moz-full-screen-ancestor">:-moz-full-screen-ancestor</a></code>
+</li> <li>
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/iframe#attr-mozallowfullscreen">mozallowfullscreen</a></code>
+</li>
+</ul>
+<ul> <li><a class="external" title="http://blog.pearce.org.nz/2011/11/firefoxs-html-full-screen-api-enabled.html" rel="external" href="http://blog.pearce.org.nz/2011/11/firefoxs-html-full-screen-api-enabled.html" target="_blank">Blog post: Firefox's HTML full-screen API enabled in Nightly builds</a></li>
+</ul>
+<p></p></div></div></div>
+            <section class="page-meta">
+                  <section id="page-tags">
+            <h2>Tags <span class="sub">(5)</span></h2>
+              <a href="/index.php?title=Special:Tags&pageId=84198" class="disabled" onclick="return false;"  id="deki-page-tags-toggleview">Edit tags</a></span>              <div id="deki-page-tags"><ul class="tags"><li><a href="https://developer.mozilla.org/Special:Tags?tag=DOM" title="DOM" tagid="10" class="text">DOM</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=Full-screen" title="Full-screen" tagid="3298" class="text">Full-screen</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=MakeBrowserAgnostic" title="MakeBrowserAgnostic" tagid="2525" class="text">MakeBrowserAgnostic</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=NeedsTechnicalReview" title="NeedsTechnicalReview" tagid="17" class="text">NeedsTechnicalReview</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=video" title="video" tagid="1181" class="text">video</a></li></ul></div>          </section>
+        
+                  <section id="page-files">
+            <h2>Attachments <span class="sub">(0)</span></h2>
+            <div id="pageFiles"><div class="nofiles">&nbsp;</div></div>            <div id="deki-image-gallery-lite"><table class="table empty" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="33%"></col><col width="33%"></col><col width="33%"></col></colgroup><tbody><tr class="bg1"><th class="col1" colspan="3">Images 0</th></tr><tr class="bg2"><td class="col1 empty" colspan="3">No images to display in the gallery.</td></tr></tbody></table></div>            <p class="add"><a title="Attach file" class="disabled ">Attach file</a></p>
+          </section>
+        
+                        
+        </section>
+        </div>
+
+    </article>
+
+    <p class="last-mod hideforedit">
+      Page last modified <a href="/index.php?title=en/DOM/Using_full-screen_mode&action=history" title="23:52, 2 Feb 2012">23:52, 2 Feb 2012</a> by <a href="/User:ernestd" class="link-user" rel="internal">ernestd</a>    </p>
+
+  </div><!-- /#content-main -->
+
+</div><!-- /.wrap -->
+</section><!-- /#content -->
+
+
+
+<footer id="site-info" role="contentinfo">
+<div class="wrap">
+  <div id="legal">
+    <img src="/skins/mdn/Transitional/img/mdn-logo-tiny.png" alt="" width="42" height="48">
+    <p id="copyright">&copy; 2012 Mozilla Developer Network</p>
+    <p>Content is available under <a href="/Project:Copyrights">these licenses</a> &bull; <a href="/Project:en/About">About MDN</a> &bull; <a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Policy</a> &bull; <a href="/Project:en/Using_the_Mozilla_Developer_Center">Help</a></p>
+  </div>
+  <ul class="user-state">
+      <li><a href="/users/login">Sign in</a></li>
+    </ul>
+</div>
+</footer>
+
+
+			
+<div class="ui-msg-wrap" id="MTMessage" style="display: none;">
+	<div class="ui-msg ui-errormsg" id="MTMessageStyle">
+		<div class="ui-msg-opt">
+			<ul>
+				<li><a href="#" class="dismiss" onclick="return MTMessage.Hide();">dismiss message</a></li>
+				<li><a href="#" class="details" id="MTMessageDetailsLink" onclick="return MTMessage.ShowDetails(this);">view details</a></li>
+			</ul>
+			<div class="ui-msg-autoclose">
+				<span id="MTMessageUnpaused" style="display: inline;">Message will close by itself in <span id="MTMessageTimer"></span> seconds</span>
+				<span id="MTMessagePaused" style="display: none;">Message timer has been stopped</span>
+			</div>
+		</div>
+		<div class="ui-msg-header" id="MTMessageHeader"></div>
+		<div class="ui-msg-desc" id="MTMessageDesc"></div>
+		<div class="ui-msg-desc" id="MTMessageDetails" style="display: none;">
+			<p>Viewing Details:</p>
+		</div>
+	</div>
+</div><script type="text/javascript">$(function() {var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");$.getScript(gaJsHost + "google-analytics.com/ga.js", function() {try {var pageTracker = _gat._getTracker("UA-68075-16");pageTracker._setDomainName(".mindtouch.com");pageTracker._trackPageview();} catch(e) {}});});</script>
+<!-- Served by pm-dekiwiki01.mozilla.org in 2.21 secs. -->
+<!--
+	Verb      Path                                              Time(ms)       API Stats
+	GET       /deki/site/settings                                  23.07       request-time-ms=20; mysql-queries=2; mysql-time-ms=18; cache-ratio=0.00; cache-hit=0; cache-miss=-1; cache-del=0; cache-ins=1;
+	GET       /deki/users/=Anonymous                                6.47       request-time-ms=4; mysql-queries=4; mysql-time-ms=3; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/license                                         7.17       request-time-ms=3; mysql-queries=2; mysql-time-ms=2; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/pages/84198/contents                          947.78       request-time-ms=945; mysql-queries=102; mysql-time-ms=775; cache-ratio=1.16; cache-hit=757; cache-miss=-102; cache-del=0; cache-ins=99;
+	GET       /deki/pages/84198                                   133.46       request-time-ms=129; mysql-queries=21; mysql-time-ms=117; cache-ratio=25.00; cache-hit=25; cache-miss=-24; cache-del=0; cache-ins=24;
+	GET       /deki/pages/84198/info                                6.16       request-time-ms=4; mysql-queries=3; mysql-time-ms=3; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/pages/84198/tags                                9.77       request-time-ms=8; mysql-queries=5; mysql-time-ms=5; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/site/properties                                12.10       request-time-ms=10; mysql-queries=4; mysql-time-ms=7; cache-ratio=-0.25; cache-hit=1; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/site/properties/urn%253Aui.deki.mindtouch.com%2523html.mdn.Transitional     8.67       request-time-ms=6; mysql-queries=3; mysql-time-ms=5; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/site/nav/=en%252FDOM%252FUsing%2Bfull-screen%2Bmode/full   997.20       request-time-ms=992; mysql-queries=6; mysql-time-ms=895; cache-ratio=-6.00; cache-hit=6; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/pages/84198/tags                                8.47       request-time-ms=6; mysql-queries=5; mysql-time-ms=4; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	                                                             =======
+	                                                     Total: 2,160.33      
+	                                                     Ideal: 2,151.86      
+-->
+ 
+<div id="popupMessage"></div> <div id="popupMask"></div>
+<div id="menuFiller"></div>
+<div id="bodyHeight"></div>
+
+<script src="https://browserid.org/include.js"></script>
+<script src="/skins/mdn/Transitional/js/superfish.js"></script>
+<script src="/skins/mdn/Transitional/js/webtrends.js"></script>
+<script src="https://www.google.com/jsapi"></script>
+<script src="/skins/mdn/Transitional/js/javascript.min.js"></script>
+
+ 
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+_tag.dcsGetId();
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="https://statse.webtrendslive.com/dcs8yrjuavz5bdaun34r2o8bi_8o8x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+
+<script type="text/javascript">/*<![CDATA[*/$(function(){dp.SyntaxHighlighter.HighlightAll('code');});/*]]>*/</script> 
+</body>
+</html>
