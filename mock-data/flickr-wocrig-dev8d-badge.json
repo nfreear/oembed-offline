@@ -11,5 +11,6 @@ $.fn.oembed.success({
 "author_name":"wocrig",
 "width":"500",
 "height":"298",
-"url":"http:\/\/farm4.staticflickr.com\/3090\/3130803450_b59479d7a1.jpg"
+"url":"assets\/services\/flickr-wocrig-dev8d-badge-cc-by-sa.jpg",
+"__url":"http:\/\/farm4.staticflickr.com\/3090\/3130803450_b59479d7a1.jpg"
 })

@@ -6,6 +6,5 @@ $.fn.oembed.success({
 "html": "<p><b>oEmbed</b> is an <a href=\"http://en.wikipedia.org/wiki/Open_format\" title=\"Open format\">open format</a> designed to allow embedding content from a website into another page. This content is of the types photo, video, link or rich.</p>\n<p>An oEmbed exchange occurs between a consumer and a provider. A consumer wishes to show an embedded representation of a third-party resource on their own website, such as a photo or an embedded video. A provider implements the oEmbed <a href=\"http://en.wikipedia.org/wiki/Application_programming_interface\" title=\"Application programming interface\">API</a> to allow consumers to fetch that representation.</p>",
 "version": "1.0",
 "provider_name": "Wikipedia",
-"__type": "rich",
 "type": "link"
 })

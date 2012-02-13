@@ -7,6 +7,7 @@ body {
 }
 input { font-size:.95em; }
 a img { border: none; }
+iframe { display: block; overflow:hidden; }
 
 #cfg a {
   background: #eee;
@@ -25,6 +26,7 @@ a img { border: none; }
   height: 6em;
   overflow-y: scroll;
   padding: 5px;
+  margin-top: 4em;
 }
 
 .oembed-container {
@@ -35,6 +37,10 @@ a img { border: none; }
 a.embed, .__embed{
   display: block;
   margin: 1em 0;
+}
+
+iframe.example.oembed {
+  border: 1px solid #bbb;
 }
 
 /* Vimeo size bug fix. */

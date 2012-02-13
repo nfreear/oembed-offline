@@ -366,7 +366,14 @@
 		    container = $(selector+'[href*="'+oembedData.provider_url+'"]');
 		$.fn.oembed.insertCode(container, 'append', oembedData);
 	};
+	function offlineForm() {
+	  var form ='<form method="get" action="">'
+		+'<label>offline Url <input name=u id=u type=url required size=75 X-placeholder="file://localhost/C:/PATH"/></label>'
+		+' <input type="submit" /></form><hr />';
+	  $('h1:first').before(form);
+	}
 	$.fn.offlineUrl = function(id){
+		offlineForm();
 		$.log("Detecting offline URL...");
 		var u = decodeURIComponent(document.location.search.replace(/^.*=/,''));
 		if (!u || !u.match(/:\/\//)) {
@@ -385,9 +392,9 @@
 			l = l.replace(/^file:\/\/([a-zA-Z]\:)\//, 'file://localhost/$1/');
 
 			//document.getElementById('u').value = l;
-			$('#u').val(l);
 			u = l;
 		}
+		$('#u').val(u);
 		return u ? u : $("#"+ id).attr("href");
 	};
 
