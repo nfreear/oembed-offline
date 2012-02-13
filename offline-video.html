@@ -3,7 +3,6 @@
 
 
 <h1>oembed-offline / video</h1>
-&larr; <a rel=help href="https://github.com/nfreear/oembed-offline">github: nfreear/oembed-offline</a><hr />
 
 
 <a class=embed href="http://vimeo.com/20521841#ukoln-ar-drone">Vimeo: AR.Drone + Kinect + Dev8D / ukoln</a>
@@ -17,21 +16,22 @@
 <script src="scripts/jquery.oembed-offline.js"></script>
 <script>
 $(document).ready(function() {
-  //$.ajaxSetup({ isLocal: true });
 
   $("a.embed").oembed(null, {
     embedMethod: "append",
 
-    // Neat?
+    // Part of the offline hack.
     offlineUrl: $.fn.offlineUrl("offline")
   },
+  // More of the offline hack.
   function(data) {
-    $.fn.offlineInsert(data)
-  }
-  );
+    $.fn.offlineInsert(data, embedMethod);
+  });
 });
 </script>
 
-
 <p id=log>
+
+
+<p>&larr; <a rel=help href="https://github.com/nfreear/oembed-offline">nfreear/oembed-offline</a>
 </html>
