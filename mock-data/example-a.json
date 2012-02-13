@@ -1,0 +1,13 @@
+$.fn.oembed.success({
+"version":"1.0",
+"type":"rich",
+"__author_url":"",
+"cache_age":3600,
+"provider_name":"Example",
+"provider_url":"http:\/\/example.org\/",
+"title":"My 1st example embed",
+"html":"MY CONTENT <iframe class='example oembed' width='440' height=220 src='assets\/services\/example-a.html' frameborder='0'><\/iframe>",
+"__author_name":"jbloggs",
+"width":"440",
+"height":"220"
+})
