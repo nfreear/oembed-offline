@@ -1,0 +1,14 @@
+// Handling JSON-P &callback=FN.callback - really useful for jQuery mockups / hacks!
+FN.callback(
+{
+"version": "1.0", // REQUIRED
+"provider_name": "Dev8D",
+"type": "rich", // REQUIRED
+"provider_url": "http:\/\/dev8d.org",
+"author_name": "Joe bloggs - if there is an 'author', put me here!",
+"author_url": "http:\/\/dev8d.org/path/to/author/profile",
+"title": "Session title",
+"url": "http:\/\/dev8d.org\/original/url/useful/for/debugging!",
+"html": "<p>This is the place for your 'payload' - at least for type=rich" //REQUIRED.
+}
+)
