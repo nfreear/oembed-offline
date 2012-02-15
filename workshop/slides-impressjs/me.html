@@ -65,10 +65,10 @@
     oEmbed at Dev8D 2012
     | Content by Nick Freear @nfreear
     | Powered by impress.js | Bartek Szopka @bartaz</title>
-    <!--N.D.Freear, 9 February 2012. -->
     
     <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com.">
     <meta name="author" content="Bartek Szopka" />
+	<meta name="author" content="N.D.Freear; 9,13 February 2012" />
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
 
@@ -129,11 +129,16 @@
 		<p><a href="http://twitter.com/nfreear" title="Nick Freear">@nfreear</a>
 		<p><a href="http://iet.open.ac.uk/">Institute of Educational Technology</a>
 		at The Open University
+
+		<p><small><a href="https://docs.google.com/spreadsheet/viewform?formkey=dGhfUkVMX0hGNW1oM1NPR3RDTkgzS2c6MQ">Please evaluate the workshop!
+		<br /> bit.ly/dev8d-oembed-form</a></small>
     </div>
+
 
     <div id="do-i-care" class="step" data-x="0" data-y="-1500">
         Or <q><em>why should I care about oEmbed? And let's name-drop HTML5</em></q>
     </div>
+
 
     <div id="agenda" class="step slide" data-x="1000" data-y0="-1500" data-y="0">
 		<h2>Agenda</h2>
@@ -147,6 +152,7 @@
 		</ul>
     </div>
 
+
     <div id="why" class="step" data-x="-4500" data-y="-1500" data-scale="4">
         <h2>Why? The old way...</h2>
 		<span class="x-try"></span>
@@ -157,19 +163,21 @@
 		-->
     </div>
 
+
     <div id="problems" class="slide step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
         <h2>Problems</h2>
 		<ul>
 		<li>Difficult for non-techies to copy, error-prone
 		<li>Security holes
 		<li>Potential to break sites
-		<li>Not future proofed
-		<li>Other routes, eg. a filter plugin for your CMS &ndash; require maintenance
+		<li>Not future proofed - <strong>HTML5</strong> anyone?
+		<li>Other routes, eg. a filter plugin for specific embeds, for your CMS &ndash; require maintenance
 		</ul>
     </div>
 
+
     <div id="cloudworks" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale0="6" data-scale="4">
-        <h2>A case-study: Cloudworks</h2>
+        <h2>A case-study: <a href="http://cloudworks.ac.uk/">Cloudworks</a></h2>
 <ul>
 <li>Users wanted to embed from various places
 <li>We didn't want security/ support head-aches
@@ -183,6 +191,7 @@
  <strong>throughout</strong> the site (benefit: no-Flash).
 </aside>
     </div>
+
 
     <div id="jquery-oembed" class="step" data-x="2825" data-x-0="700" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
         <h2><code><a href="http://code.google.com/p/jquery-oembed/">jquery-oembed</a></code>
@@ -213,8 +222,9 @@ $(document).ready(function() {
 </ul>
     </div>
 
+
     <div id="who" class="slide step" data-x="6700" data-y="-550" data-scale="5">
-        <h2>Who? Providers</h2>
+    <h2>Who? Providers</h2>
 <ul>
 <li> YouTube, Vimeo, Blip.tv, Viddler, Facebook video/photo
 <li> Slideshare, Prezi, Flickr, Cacoo
@@ -224,8 +234,9 @@ $(document).ready(function() {
 </ul>
     </div>
 
+
     <div id="consumers" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-        <h2>Who? Consumers</h2>
+    <h2>Who? Consumers</h2>
 <ul>
 <li> Native in Wordpress 2.9 +
 <li> Drupal module
@@ -238,9 +249,10 @@ $(document).ready(function() {
 </ul>
     </div>
 
+
 	<div id="wordpress" class="step" data-x="8000" data-y="5000" data-scale="2">
-	<h2>Wordpress</h2>
-<pre>
+	<h2>Wordpress <small>2.9+</small></h2>
+<pre style="font-size:.7em">
 wp-config.php
 
 
@@ -248,11 +260,58 @@ wp-config.php
 // Add providers...
 
 <strong><a href="http://codex.wordpress.org/Function_Reference/wp_oembed_add_provider">wp_oembed_add_provider</a></strong>( '#http://youtu.be/.*#i',
-  'http://embed.open.ac.uk/oembed', $regex = FALSE );
+ 'http://embed.open.ac.uk/oembed', $regex=<strong>TRUE</strong> );
 
-//TODO: another
+wp_oembed_add_provider( 'http://docs.google.com/*',
+ 'http://embed.open.ac.uk/oembed', $regex=<strong>FALSE</strong> );
 </pre>
 	</div>
+
+
+	<div id="proxy" class="step slide" data-x="3700" data-y="-1000" data-scale="1">
+	<h2>Why use proxies?</h2>
+<ul>
+<li> Not every site provides oEmbed
+<li> Aggregate services
+<li> 'Improve' existing services
+<li>..
+<li> <s><a href="http://oohembed.com/">Oohembed.com</a></s> <small>- the 1st, 'sold' to..</small>
+<li> <a href="http://embed.ly/">Embed.ly</a> <small>- 100s!</small>
+<li> <a href="http://embed.open.ac.uk/">Embed.open.ac.uk</a>
+ <aside>research/ RDFa/ HTML5/ <abbr title="Web accessibility">a11y</abbr>/ mobile/ niche/ <abbr title="Open University Learning Design Initiative JISC project, Cloudworks..">OULDI</abbr>/ ouplayer</aside>
+</ul>
+	</div>
+
+
+	<div id="iframe" class="step x-slide" data-x="200" data-y="3000" data-scale="">
+	<h2>Why iframes?</h2>
+<ul>
+<li> Sandbox scripts, security
+<li> Negotiation, mobiles, platforms
+<li> "<a href="http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en//events/io/2011/static/presofiles/youtube_iframe_player_the_future_of_embedding.pdf"
+ >Let the embed, not the embedder figure it out!</a>"
+<li> Who? YouTube, Vimeo, Slideshare..
+</ul>
+	</div>
+
+
+	<div id="fullscreen" class="step x-slide" data-x="-200" data-y="1500" data-scale="">
+	<h2>HTML5 fullscreen</h2>
+<ul>
+<li> Any content - video, photos, maps..
+<li> Experimental!
+<li> <code><a href="https://developer.mozilla.org/en/DOM/Using_full-screen_mode">element.mozRequestFullScreen</a></code>,
+<code>element.webkitRequestFullScreen</code>
+<li> Who? Firefox (9), 10+, Webkit.
+</ul>
+	</div>
+
+<!--
+	<div id="" class="step x-slide" data-x="" data-y="" data-scale="">
+	<h2> </h2>
+	
+	</div>
+-->
 
     <div id="oembed-offline" class="step" data-x="7000" data-y="4000" data-scale="2">
 	<h2>oembed-offline</h2>
@@ -268,6 +327,7 @@ wp-config.php
 <p>by @nfreear for Dev8D
     </div>
 
+
     <div id="go-play" class="step" data-x="5000" data-y="4000" data-scale="2">
         <p>go play...</p>
     </div>
@@ -282,9 +342,16 @@ wp-config.php
         as `data-rotate` (these two are basically aliases).
     -->
     <div id="demo" class="step" data-x="-6200" data-y="-4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
-        <p><a class=embed href="http://vimeo.com/20521841">Vimeo: AR.Drone + Kinect + Dev8D / ukoln</a>
+        <h2>Dev8D on Vimeo, using oEmbed...
+		<p><a class=embed href="http://vimeo.com/20521841">Vimeo: AR.Drone + Kinect + Dev8D / ukoln</a>
 
     </div>
+
+	<div id="caution" class="step" data-x="">
+	<h2>Providers beware</h2>
+	<a href="https://bitbucket.org/cloudengine/cloudengine/wiki/oEmbed">Guidelines for oEmbed</a>
+	<br /><small>(CloudEngine wiki)</small>
+	</div>
 
 	<div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
         <h2>impress.js</h2>
@@ -297,6 +364,8 @@ wp-config.php
 		<q><small><a href="http://data.dev8d.org/2012/programme/event/ET04">data.dev8d.org/2012/programme/event/ET04</a>
         <br /><a href="mailto:N.D.Freear+@+open.ac.uk">N.D.Freear+@+open.ac.uk</a></small>
 		<br /><a href="http://twitter.com/nfreear" title="Nick Freear">@nfreear</a>
+		<br /><small><a href="https://docs.google.com/spreadsheet/viewform?formkey=dGhfUkVMX0hGNW1oM1NPR3RDTkgzS2c6MQ">Please evaluate the workshop!
+		<br /> bit.ly/dev8d-oembed-form</a></small>
 		</q>
 	</div>
 
@@ -316,7 +385,6 @@ wp-config.php
 </div>
 
 <!--
-    
     Hint is not related to impress.js in any way.
     
     But it can show you how to use impress.js features in creative way.
@@ -327,7 +395,6 @@ wp-config.php
     is active, `#impress` element get a class of `step-bored`.
     
     This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation.
-    
 -->
 <div class="hint">
     <p>Use a spacebar or arrow keys to navigate</p>
