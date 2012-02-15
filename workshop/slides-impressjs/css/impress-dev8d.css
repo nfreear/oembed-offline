@@ -1,0 +1,83 @@
+
+
+/*
+.x-img{background-repeat:no-repeat;}
+#i-youtube-old-embed1-jpg {
+background-image:url(images/youtube-old-embed1.jpg);
+width:764; height:630px;
+}
+
+.x-img{ z-index:1; }
+.x-step{ z-index:10; }
+
+.step{ z-index:1; opacity:0.2; color:#aaa; }
+*/
+.step{ color:aaa; X-font-size:2.7em; }
+.step.active { X-z-index:999; opacity:0.95 !important; background-color:#f8f8f8; color:#111; border-radius:10px; }
+
+.step.active#demo { opacity:0; }
+.step#demo iframe{ width:720px; height:480px; display:block; margin:auto; border:5px solid #ccc; border-radius:6px; }
+
+abbr{ border-bottom:1px dotted gray; cursor:help; }
+em{ font-style:italic; }
+
+.xx-slide{
+background-image:url(http://blogs.ukoln.ac.uk/dev8d/files/2011/11/dev8d_logo-v2_400.png);
+background-repeat:no-repeat;
+background-position:92% 88%;
+x-background: url(http://www.open.ac.uk/includes/headers-footers/oulogo-56.jpg) no-repeat top right;
+}
+
+.slide li{ line-height:1.9em; font-size:1em; }
+.step ul{ list-style-type:square; padding-left:30px; }
+.step img{ display:block; border:6px solid #fff; border-radius:8px; }
+.step aside, small{ font-size:.7em; line-height:.9em; }
+.step pre, .step tt, .step code{
+  text-align:left; font:.85em monospace;
+  margin-top:2em; background:#f8f8f8; padding:20px; border:2px solid #ccc; border-radius:10px;
+}
+.x-slide#what{ opacity:0.9; }
+
+h2 code{ font-weight:bold; }
+
+
+/*
+ Logos: OU + Dev8D logos | 85 x 56px + 280 x 170px
+*/
+.x-template{ display:none; }
+#x-logos a{
+display:block;
+position:absolute;
+border:3px solid transparent;
+border-radius:5px;
+padding:6px;
+background-repeat:no-repeat;
+background-position:center;
+overflow:hidden;
+
+}
+#x-logos :hover, #x-logos :focus{
+border-color:#ccc;
+background-color:#f5f5f5;
+}
+a.xl-cc{
+x-background-image:url(http://i.creativecommons.org/l/by-sa/3.0/88x31.png);
+background-image:url(cc-by-sa-88x31.png);
+width:88px; height:31px;
+right:38px; bottom:20px;
+}
+a.xl-ou{
+x-background-image:url(http://www.open.ac.uk/includes/headers-footers/oulogo-56.jpg);
+background-image:url(oulogo-56.jpg);
+width:85px; height:56px;
+right:38px; bottom:100px;
+}
+a.xl-dev8d{
+x-background-image:url(http://blogs.ukoln.ac.uk/dev8d/files/2011/11/dev8d_logo-v2_400.png);
+background-image:url(dev8d_logo-v2_400.png);
+width:272px; height:150px;
+right:175px; bottom:5px;
+background-position:top center;
+padding:0;
+}
+#what .xl-dev8d{ display:none; }
