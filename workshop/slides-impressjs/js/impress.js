@@ -278,21 +278,44 @@
     // EVENTS
     
     document.addEventListener("keydown", function ( event ) {
-        if ( event.keyCode == 9 || ( event.keyCode >= 32 && event.keyCode <= 34 ) || (event.keyCode >= 37 && event.keyCode <= 40) ) {
+        //if ( event.keyCode == 9 || ( event.keyCode >= 32 && event.keyCode <= 34 ) || (event.keyCode >= 37 && event.keyCode <= 40) ) {
+        //if ( event.keyCode == 9 || ( event.keyCode >= 32 && event.keyCode <= 34 ) || (event.keyCode >= 36 && event.keyCode <= 40) ) {
+        if ( event.keyCode == 8 || event.keyCode == 46 || ( event.keyCode >= 32 && event.keyCode <= 40 ) ) {
+            //NDF: cmd + left/right arrow (mac)
+            if (typeof event.metaKey!='undefined' && event.metaKey) {
+              if (event.keyCode==37){
+                select(steps[0]);
+              }
+              else if (event.keyCode==39){
+                select(steps[steps.length-1]);
+              }
+            }
+            else {
             switch( event.keyCode ) {
+                case 8:  ; //NDF: backspace (see Powerpoint/ Keynote shortcuts)
+                case 46: ; //NDF: delete.
                 case 33: ; // pg up
                 case 37: ; // left
                 case 38:   // up
                          selectPrev();
                          break;
-                case 9:  ; // tab
+                //case 9:  ; // tab (NDF: conflicts with browser shortcuts - usability)
                 case 32: ; // space
                 case 34: ; // pg down
                 case 39: ; // right
                 case 40:   // down
                          selectNext();
                          break;
+                case 36:   //NDF: home (windows)
+                         select(steps[0]);
+                         break;
+                case 35:   //NDF: end (windows)
+                         select(steps[steps.length-1]);
+                         break;
             }
+            }
+            console.log("Steps: "+steps.length); //NDF:
+            //console.log(event);
             
             event.preventDefault();
         }
@@ -307,7 +330,7 @@
                 (target != document.body) ) {
             target = target.parentNode;
         }
-        
+
         if ( target.tagName == "A" ) {
             var href = target.getAttribute("href");
             
